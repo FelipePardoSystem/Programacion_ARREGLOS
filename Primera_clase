@@ -1,0 +1,45 @@
+import os
+import numpy as np
+os.system("cls")
+
+
+#Una  froma de crear un arreglo es a partir de una lista , ej:
+lista_1= [2,5,8]
+arreglo_1=np.array (lista_1)
+
+print(f''' 
+      LISTA \t{lista_1}
+      ARREGLO \t {arreglo_1}
+      ''')
+
+os.system("cls")
+print("\n=========arreglo de largo 5 SOLO UNOS =========")
+b=np.ones(5)
+print(b)
+
+print("\n=========arreglo de largo 5 SOLO CEROS =========")
+c=np.zeros(5)
+print(c)
+
+print("\n=========arreglo de con valores entre rango =========")
+d=np.arange(1,8)
+print(d)
+
+print("\n=========arreglo de largo 4 SOLO UNOS =========")
+palabras = np.empty(5, dtype=object)
+for k in range(5):
+    palabras[k]=str(input(f"Ingrese palabra: {k+1}: ")).strip()
+
+print(palabras)
+
+print("\n=========arreglo de largo 5 de float =========")
+numeros = np.empty(5, dtype=float)
+for k in range(5):
+    numeros[k]=float(input(f"Ingrese Numeros: {k+1}: "))
+    min=numeros.min()
+    max=numeros.max()
+    prom=numeros.mean()
+    print(f''' 
+          ===========ESTADISITICAS============
+          Min:{min} \t Max:{max} \t Prom:{prom}
+          ''')
