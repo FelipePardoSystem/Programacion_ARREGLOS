@@ -1,0 +1,63 @@
+import os
+import numpy as np
+import Bibliotecaowo as owo
+#------VARIABLES------
+opcion_menu=""
+tamaño=2
+nombres= np.empty(tamaño, dtype=object)
+pesos= np.empty(tamaño,dtype=int)
+estaturas=np.empty(tamaño,dtype=float)
+imcs=np.empty(tamaño,dtype=float)
+clasificaciones=np.empty(tamaño,dtype=object)
+edades=np.empty(tamaño,dtype=int)
+
+
+
+#========================
+
+# _----------codigo--------
+os.system("cls")
+while True:
+    opcion_menu=str(input('''
+    ----------APP GYMTASTIC-----------
+    1.-Ingresar usuario
+    2.-Listar usuario
+    3.-Nombre y edad del max IMC
+    4.-Salir
+    elija opcion: '''))
+    if opcion_menu=="1":
+        os.system("cls")
+        print("\n Por favor ingrese nombre del usuario")
+        for k in range(tamaño):
+            nombres[k]=str(input("Ingrese nombre: ")).strip().capitalize()
+            while not len(nombres[k])>0:
+                print("Error...por favor no deje este campo vacio.")
+                nombres[k]=str(input("Ingrese nombre: ")).strip().capitalize()
+        
+            edades[k] = int(input("Ingrese edad: "))
+            while not 0<=edades[k]<=110:
+                print("Error,por favor ingrese un valor mayor a 0 y menor a 110 :) ")
+                edades[k] = int(input("Ingrese edad: "))
+        
+            pesos[k] = int(input("Ingrese su peso(kilogramos): "))
+            while not 0<pesos[k]:
+                print("Ingrese su peso por favor.")
+                pesos[k] = int(input("Ingrese su peso(kilogramos): "))
+        
+            estaturas[k]= float(input("Ingrese su estatura(metros): "))
+            while not 0<estaturas[k]<4.0:
+                print("Ingrese su estatura de forma valida por favor en metros , desde el 0 hasta los 4.0 metros")
+                estaturas[k]= float(input("Ingrese su estatura(metros): "))
+            imcs[k]= owo.calcular_imc(pesos[k],estaturas[k])
+            clasificaciones[k]= owo.determinar_clasificacion(imcs[k])
+            owo.imprimir_datos(nombres[k],edades[k],pesos[k],estaturas[k],imcs[k],clasificaciones[k])
+            os.system("pause")
+            os.system("cls")
+    os.system("pause")
+    if opcion_menu=="2":
+        os.system("cls")
+        print("\n-----Listar-----")
+        for k in range(tamaño):
+            if imcs[k]>25:
+                owo.imprimir_datos(nombres[k],edades[k],pesos[k],estaturas[k],imcs[k],clasificaciones[k])
+        os.system("pause")
