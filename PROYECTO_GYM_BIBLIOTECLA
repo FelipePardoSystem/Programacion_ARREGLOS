@@ -1,0 +1,35 @@
+import os
+import numpy as np
+
+
+def calcular_imc(peso,estatura):
+    imc = peso/estatura**2
+    return round(imc,2)
+def determinar_clasificacion(imc):
+    clasificacion=""
+    if(imc<16.00):
+        clasificacion= "Infrapeso: Delgadez Severa"
+    if(16.00<=imc<=16.99):
+        clasificacion="Infrapeso: Delgadez Moderada"
+    if(17.00<=imc<=18.49):
+        clasificacion="Infrapeso: Delgadez Aceptable"
+    if(18.50<=imc<=24.99):
+        clasificacion="Peso Normal"
+    if(25.00<=imc<=29.99):
+        clasificacion="Sobrepeso"
+    if(30.00<=imc<=34.99):
+        clasificacion="Obeso: Tipo 1"
+    if(35.00<=imc<=40.00):
+        clasificacion="Obeso: Tipo 2"
+    if(imc>40.00):
+        clasificacion="Obeso: Tipo 3"
+    return clasificacion
+
+def imprimir_datos(nombre, edad , peso , estatura , imc , clasificacion):
+    print(f'''
+    =============INFO============
+    \t Nombre:{nombre} \t\t Edad:{edad} años
+    \t Peso:{peso} KG. \t\t Estatura:{estatura} m.
+    \t IMC: {imc} \t\t Clasificacion: {clasificacion}
+    =============================
+    ''')
