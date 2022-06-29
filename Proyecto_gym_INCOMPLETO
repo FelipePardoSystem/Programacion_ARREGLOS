@@ -61,3 +61,12 @@ while True:
             if imcs[k]>25:
                 owo.imprimir_datos(nombres[k],edades[k],pesos[k],estaturas[k],imcs[k],clasificaciones[k])
         os.system("pause")
+    if opcion_menu=="3":
+        os.system("cls")
+        maximo=np.max(imcs)
+        for k in range(tamaño):
+            if imcs[k]==maximo:
+                owo.imprimir_datos(nombres[k],edades[k],pesos[k],estaturas[k],imcs[k],clasificaciones[k])
+        os.system("pause")
+    if opcion_menu=="4":
+        break
