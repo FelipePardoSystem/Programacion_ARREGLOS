@@ -1,0 +1,10 @@
+import os
+import numpy as np
+def imprimir_ciudadano(nifs,verificadores_nif , nombres, edades,estado_civiles,):
+    print(f"""
+    =================== CIUDADANO ===================
+    \tNIF: {nifs}-{verificadores_nif} 
+    \tNombre: {nombres}
+    \tEdad: {edades} 
+    \tEstado Civil:{estado_civiles}
+    ===================================================""")
