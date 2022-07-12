@@ -1,0 +1,275 @@
+import numpy as np
+import os
+import time
+
+#-------------Variables-------------
+menu=True
+opcion_menu=""
+acum_subtotal=0
+cantidad=0
+
+total_ganancias=0
+cant__a=0
+cant__b=0
+cant__c=0
+cant__d=0
+total__a=0
+total__b=0
+total__c=0
+total__d=0
+opcion=0
+valor_tipo=0
+total=0
+num_rut=0
+letra=''
+piso=0
+rut=0
+tipo_a=3.800 
+tipo_b=3.000 
+tipo_c=2.800 
+tipo_d=3.500 
+cont_cantidad=0
+ruts_ordenados=""
+total_total=0
+opcion_salida=""
+#---------------ARREGLOS------------------
+ruts=np.empty(40,dtype=object)
+
+a= np.empty(4,dtype=object)
+b= np.empty(4,dtype=object)
+c= np.empty(4,dtype=object)
+d= np.empty(4,dtype=object)
+e= np.empty(4,dtype=object)
+f= np.empty(4,dtype=object)
+g= np.empty(4,dtype=object)
+h= np.empty(4,dtype=object)
+i= np.empty(4,dtype=object)
+j= np.empty(4,dtype=object)
+
+
+
+for k in range (0,4):
+    a[k]="O"
+    b[k]="O"
+    c[k]="O"
+    d[k]="O"
+    e[k]="O"
+    f[k]="O"
+    g[k]="O"
+    h[k]="O"
+    i[k]="O" 
+    j[k]="O"
+#-----------CODIGO PRINCIPAL------------
+while menu:
+    os.system("cls")
+    print("\n---------- Departamentos Casa Feliz ----------")
+    opcion_menu=str(input('''
+    1.-Comprar departamento 
+    2.-Mostrar departamentos disponibles
+    3.-Ver listado de compradores
+    4.-Mostrar ganancias totales
+    5.-Salir
+    Seleccione opcion: '''))
+    
+    if opcion_menu=="1":
+        os.system("cls")
+        print(f'''   
+                    DEPARTAMENTOS A LA VENTA
+        10  [{j[0]}] [{j[1]}]  [{j[2]}]   [{j[3]}] 
+        9   [{i[0]}] [{i[1]}]  [{i[2]}]   [{i[3]}] 
+        8   [{h[0]}] [{h[1]}]  [{h[2]}]   [{h[3]}] 
+        7   [{g[0]}] [{g[1]}]  [{g[2]}]   [{g[3]}] 
+        6   [{f[0]}] [{f[1]}]  [{f[2]}]   [{f[3]}]  
+        5   [{e[0]}] [{e[1]}]  [{e[2]}]   [{e[3]}]
+        4   [{d[0]}] [{d[1]}]  [{d[2]}]   [{d[3]}] 
+        3   [{c[0]}] [{c[1]}]  [{c[2]}]   [{c[3]}] 
+        2   [{b[0]}] [{b[1]}]  [{b[2]}]   [{b[3]}] 
+        1   [{a[0]}] [{a[1]}]  [{a[2]}]   [{a[3]}] 
+            [O] Disponible
+            [X] Comprado
+        
+        Por favor , indique que departamento desea comprar , considerando que los X ya estan comprados.
+        ''')
+        cantidad=0
+        cantidad=int(input("Ingrese cantidad de departamentos que desea adquirir:"))
+        while cantidad<1:
+            cantidad=int(input("Ingrese cantidad de departamentos que desea adquirir:")) 
+        cont_cantidad=0
+        acum_subtotal=0
+        piso=0
+        
+        while cont_cantidad!=cantidad:
+            piso=0
+            piso=int(input("Ingrese el piso que desea: "))
+            while piso<1 or piso>10:
+                piso=int(input("Ingrese el piso que desea DEL 1 AL 10 por favor: "))
+            letra=str(input("Ingrese el tipo de departamento que desea comprar A,B,C o D: ")).lower()
+            while letra!="a" and letra!="b" and letra!="c" and letra!="d":
+                letra=str(input("Ingrese el tipo de departamento que desea comprar A,B,C o D:")).lower()
+            if letra=="a":
+                tipo_a=3800
+                cant__a+=1
+            elif letra=="b":
+                tipo_b=3000
+                cant__b+=1
+            elif letra=="c":
+                tipo_c=2800
+                cant__c+=1
+            elif letra=="d":
+                tipo_d=3500
+                cant__d+=1
+        if piso==1:
+            for k in range (0,4):
+                    if k==letra:
+                        if a[k]=="O":
+                            a[k]="X"
+                            ruts[k]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break 
+        if piso==2:
+            for k in range (0,4):
+                    if k==letra:
+                        if b[k]=="O":
+                            b[k]="X"
+                            ruts[k+4]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break
+        if piso==3:
+            for k in range (0,4):
+                    if k==letra:
+                        if c[k]=="O":
+                            c[k]="X"
+                            ruts[k+8]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break  
+        if piso==4:
+            for k in range (0,4):
+                    if k==letra:
+                        if d[k]=="O":
+                            d[k]="X"
+                            ruts[+12]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break
+        if piso==5:
+            for k in range (0,4):
+                    if k==letra:
+                        if e[k]=="O":
+                            e[k]="X"
+                            ruts[k+16]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break
+
+        if piso==6:
+            for k in range (0,4):
+                    if k==letra:
+                        if f[k]=="O":
+                            f[k]="X"
+                            ruts[k+20]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break
+        if piso==7:
+            for k in range (0,4):
+                    if k==letra:
+                        if g[k]=="O":
+                            g[k]="X"
+                            ruts[k+24]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break  
+
+        if piso==8:
+            for k in range (0,4):
+                    if k==letra:
+                        if h[k]=="O":
+                            h[k]="X"
+                            ruts[k+28]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break
+        if piso==9:
+            for k in range (0,4):
+                    if k==letra:
+                        if i[k]=="O":
+                            i[k]="X"
+                            ruts[k+32]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break 
+        if piso==10:
+            for k in range (0,4):
+                    if k==letra:
+                        if j[k]=="O":
+                            j[k]="X"
+                            ruts[k+36]=rut
+                            print("El departamento ha sido comprado con exito =) .") 
+                        else:
+                            print("El departamento que desea ya ha sido comprado por alguien mas")
+                            break  
+        os.system("pause")
+    if opcion==2:
+        os.system("cls")
+        print(f'''     
+                    DEPARTAMENTOS DISPONIBLES
+        10  [{j[0]}] [{j[1]}]  [{j[2]}]   [{j[3]}] 
+        9   [{i[0]}] [{i[1]}]  [{i[2]}]   [{i[3]}] 
+        8   [{h[0]}] [{h[1]}]  [{h[2]}]   [{h[3]}] 
+        7   [{g[0]}] [{g[1]}]  [{g[2]}]   [{g[3]}] 
+        6   [{f[0]}] [{f[1]}]  [{f[2]}]   [{f[3]}]  
+        5   [{e[0]}] [{e[1]}]  [{e[2]}]   [{e[3]}]
+        4   [{d[0]}] [{d[1]}]  [{d[2]}]   [{d[3]}] 
+        3   [{c[0]}] [{c[1]}]  [{c[2]}]   [{c[3]}] 
+        2   [{b[0]}] [{b[1]}]  [{b[2]}]   [{b[3]}] 
+        1   [{a[0]}] [{a[1]}]  [{a[2]}]   [{a[3]}] 
+            [O] Disponible
+            [X] Comprado
+            
+        ''')
+    os.system("pause")
+
+    if opcion==3:
+        os.system('cls')
+        print("-----LISTADO-DE-COMPRADORES----")
+        ruts_ordenados=np.sort(ruts)
+        for k in range (0,40):
+            if ruts_ordenados[k]!=0:
+                print(ruts_ordenados[k])
+        os.system("pause")
+    if opcion==4:
+        os.system('cls')
+        total__a= tipo_a*cant__a
+        total__b= tipo_b*cant__b
+        total__c= tipo_c*cant__c
+        total__d= tipo_d*cant__d
+        cantidad_total= cant__a+cant__b+cant__c+cant__d
+        total_total= total__a+total__b+total__c+total__d
+
+
+        print(f''' 
+                                    GANANCIAS TOTALES
+
+        Tipo de departamento                        |   Cantidad   |     Total   
+        Departamento tipo A       3.800UF       |  {cant__a}         {total__a} UF
+        Departamento tipo B       3.000UF       |  {cant__b}         {total__b} UF
+        Departamento tipo C       2.800UF       |  {cant__c}         {total__c} UF
+        Departamento tipo D       3.500UF       |  {cant__d}         {total__d} UF
+        Cantidad total                             {cantidad_total}  {total_total} UF  
+        
+        ''')
+        os.system("pause")
+    if opcion==5:
+            break
