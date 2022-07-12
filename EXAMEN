@@ -24,10 +24,10 @@ num_rut=0
 letra=''
 piso=0
 rut=0
-tipo_a=3.800 
-tipo_b=3.000 
-tipo_c=2.800 
-tipo_d=3.500 
+tipo_a=3800 
+tipo_b=3000 
+tipo_c=2800 
+tipo_d=3500 
 cont_cantidad=0
 ruts_ordenados=""
 total_total=0
@@ -109,117 +109,127 @@ while menu:
             if letra=="a":
                 tipo_a=3800
                 cant__a+=1
-            elif letra=="b":
+            if letra=="b":
                 tipo_b=3000
                 cant__b+=1
-            elif letra=="c":
+            if letra=="c":
                 tipo_c=2800
                 cant__c+=1
-            elif letra=="d":
+            if letra=="d":
                 tipo_d=3500
                 cant__d+=1
-        if piso==1:
-            for k in range (0,4):
-                    if k==letra:
-                        if a[k]=="O":
-                            a[k]="X"
-                            ruts[k]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break 
-        if piso==2:
-            for k in range (0,4):
-                    if k==letra:
-                        if b[k]=="O":
-                            b[k]="X"
-                            ruts[k+4]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break
-        if piso==3:
-            for k in range (0,4):
-                    if k==letra:
-                        if c[k]=="O":
-                            c[k]="X"
-                            ruts[k+8]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break  
-        if piso==4:
-            for k in range (0,4):
-                    if k==letra:
-                        if d[k]=="O":
-                            d[k]="X"
-                            ruts[+12]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break
-        if piso==5:
-            for k in range (0,4):
-                    if k==letra:
-                        if e[k]=="O":
-                            e[k]="X"
-                            ruts[k+16]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break
+            if piso==1:
+                for k in range (0,4):
+                        if k==letra:
+                            if a[k]=="O":
+                                a[k]="X"
+                                ruts[k]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break 
+            if piso==2:
+                for k in range (0,4):
+                        if k==letra:
+                            if b[k]=="O":
+                                b[k]="X"
+                                ruts[k+4]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break
+            if piso==3:
+                for k in range (0,4):
+                        if k==letra:
+                            if c[k]=="O":
+                                c[k]="X"
+                                ruts[k+8]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break  
+            if piso==4:
+                for k in range (0,4):
+                        if k==letra:
+                            if d[k]=="O":
+                                d[k]="X"
+                                ruts[+12]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break
+            if piso==5:
+                for k in range (0,4):
+                        if k==letra:
+                            if e[k]=="O":
+                                e[k]="X"
+                                ruts[k+16]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break
 
-        if piso==6:
-            for k in range (0,4):
-                    if k==letra:
-                        if f[k]=="O":
-                            f[k]="X"
-                            ruts[k+20]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break
-        if piso==7:
-            for k in range (0,4):
-                    if k==letra:
-                        if g[k]=="O":
-                            g[k]="X"
-                            ruts[k+24]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break  
+            if piso==6:
+                for k in range (0,4):
+                        if k==letra:
+                            if f[k]=="O":
+                                f[k]="X"
+                                ruts[k+20]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break
+            if piso==7:
+                for k in range (0,4):
+                        if k==letra:
+                            if g[k]=="O":
+                                g[k]="X"
+                                ruts[k+24]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break  
 
-        if piso==8:
-            for k in range (0,4):
-                    if k==letra:
-                        if h[k]=="O":
-                            h[k]="X"
-                            ruts[k+28]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break
-        if piso==9:
-            for k in range (0,4):
-                    if k==letra:
-                        if i[k]=="O":
-                            i[k]="X"
-                            ruts[k+32]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break 
-        if piso==10:
-            for k in range (0,4):
-                    if k==letra:
-                        if j[k]=="O":
-                            j[k]="X"
-                            ruts[k+36]=rut
-                            print("El departamento ha sido comprado con exito =) .") 
-                        else:
-                            print("El departamento que desea ya ha sido comprado por alguien mas")
-                            break  
+            if piso==8:
+                for k in range (0,4):
+                        if k==letra:
+                            if h[k]=="O":
+                                h[k]="X"
+                                ruts[k+28]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break
+            if piso==9:
+                for k in range (0,4):
+                        if k==letra:
+                            if i[k]=="O":
+                                i[k]="X"
+                                ruts[k+32]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break 
+            if piso==10:
+                for k in range (0,4):
+                        if k==letra:
+                            if j[k]=="O":
+                                j[k]="X"
+                                ruts[k+36]=rut
+                                cont_cantidad+=1
+                                print("El departamento ha sido comprado con exito =) .") 
+                            else:
+                                print("El departamento que desea ya ha sido comprado por alguien mas")
+                                break  
         os.system("pause")
     if opcion==2:
         os.system("cls")
